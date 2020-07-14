@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <MiFormulario/>
   </div>
 </template>
@@ -13,6 +13,7 @@ export default {
     MiFormulario
   }
 }
+        
 </script>
 
 <style>

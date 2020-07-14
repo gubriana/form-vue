@@ -1,54 +1,126 @@
 <template>
-  <form action="">
-    <h3>Juguetes</h3>
-    <p>Tu nombre: <input type="text" v-model="nombre"></p>
-    <p>Categoría de juguete:
-      <select v-model="categoria_juguete" >
-        <option value="bloques">Bloques</option>
-        <option value="autos">Autos</option>
-        <option value="peluche">Peluche</option>
-        <option value="pelotas">Pelotas</option>
-      </select>  
-    </p>
-    <p>Lugar para jugar:
-      <select v-model="categoria_lugar" >
-        <option value="dormitorio">Dormitorio</option>
-        <option value="patio">Patio</option>
-        <option value="playa">Playa</option>
-      </select>  
-    </p>
-    <p>Colores preferidos:<br>
-      <input type="checkbox" value="azul" v-model="checkedColores">
-      <label for="azul">Azul</label><br>
-      <input type="checkbox" value="verde" v-model="checkedColores">
-      <label for="">Verde</label><br>
-      <input type="checkbox" value="amarillo" v-model="checkedColores">
-      <label for="amarillo">Amarillo</label><br>
-      <input type="checkbox" value="rojo" v-model="checkedColores">
-      <label for="rojo">Rojo</label><br>
-    </p>
-      <br>
-    <p>Materialidades favoritas:<br>
-      <input type="radio" value="madera" v-model="checkedMateriales">
-      <label for="madera">Madera</label><br>
-      <input type="radio" value="plastico" v-model="checkedMateriales">
-      <label for="plastico">Plástico</label><br>
-      <input type="radio" value="tela" v-model="checkedMateriales">
-      <label for="tela">Tela</label><br>
-      <input type="radio" value="espuma" v-model="checkedMateriales">
-      <label for="tela">Espuma</label><br>
-    </p><br>
-    <p>
-      Mensaje: <textarea v-model="mensaje" placeholder="Agregar líneas"></textarea>
-    </p><br>
-    <button type="submit" id="enviar">Enviar</button>
-    <p>Nombre: {{Nombre}}</p>
-    <p>Juguete: {{categoria_juguete}}</p>
-    <p>Lugar: {{categoria_lugar}}</p>
-    <p>Color: {{checkedColores}}</p>
-    <p>Materialidad: {{checkedMateriales}}</p>
-    <p>Mensaje: {{mensaje}}</p>
-  </form>
+
+<div class="row">
+  <div class="col s2"></div>
+  <div class="col s8">
+    <h3>Arma tus juguetes personalizados</h3>
+      <div class="card card-panel left-align">
+        <div class="card-image">
+          <img src="https://www.compassselfstorage.com/wp-content/uploads/2019/09/vintage-toys.jpg">
+        </div>
+        <div class="card-content">
+          <form action="" class="align-left">
+            <h5>Tu nombre</h5>
+            <p>
+            <input type="text" v-model="nombre">
+            </p>
+          
+            <h5>Tipo de juguete:</h5>
+            <p>
+              <select v-model="tipo_juguete" class="input-field">
+                <option value="bloques">Bloques</option>
+                <option value="autos">Autos</option>
+                <option value="peluche">Peluche</option>
+                <option value="pelotas">Pelotas</option>
+              </select>  
+            </p>
+
+            <h5>Lugar para jugar:</h5>
+            <p>
+              <select v-model="categoria_lugar" >
+                <option value="casa">Casa</option>
+                <option value="departamento">Departamento</option>
+                <option value="patio">Patio</option>
+                <option value="playa">Playa</option>
+                <option value="nieve">Nieve</option>
+              </select>  
+            </p>
+
+            <h5>Escoge un o más colores:</h5>
+            <p>
+              <label>
+                <input type="checkbox" value="azul" v-model="checkedColores" />
+                <span>Azul</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" value="rojo" v-model="checkedColores" />
+                <span>Rojo</span>
+              </label>
+            </p>
+
+            <p>
+              <label>
+                <input type="checkbox" value="verde" v-model="checkedColores" />
+                <span>Verde</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" value="amarillo" v-model="checkedColores" />
+                <span>Amarillo</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" value="rosado" v-model="checkedColores" />
+                <span>Rosado</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" value="morado" v-model="checkedColores" />
+                <span>Morado</span>
+              </label>
+            </p>
+
+            <h5 left>Materialidades favoritas:</h5>
+            <p>
+              <label>
+                <input name="group1" type="radio" value="madera" v-model="radioMateriales" />
+                <span>Madera</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="group1" type="radio" value="plastico" v-model="radioMateriales" />
+                <span>Plástico</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="group1" type="radio" value="tela" v-model="radioMateriales" />
+                <span>Tela</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="group1" type="radio" value="espuma" v-model="radioMateriales" />
+                <span>Espuma</span>
+              </label>
+            </p>
+            <br>
+            <h6>Si necesitas agregar algo más puedes dejarnos un mensaje</h6>
+            <textarea id="mensaje" class="materialize-textarea" v-model="mensaje"></textarea>
+            <label for="textarea1"></label>
+            <br>
+            
+            <p>Nombre: {{nombre}}</p>
+            <p>Juguete: {{tipo_juguete}}</p>
+            <p>Lugar: {{categoria_lugar}}</p>
+            <p>Color: {{checkedColores}}</p>
+            <p>Materialidad: {{radioMateriales}}</p>
+            <p>Mensaje: {{mensaje}}</p>
+          </form>
+          <div class="align-center">
+            <button class="btn waves-effect waves-light pulse" type="submit" name="action">Enviar</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s2"></div>
+</div>
 </template>
 
 <script>
@@ -57,10 +129,10 @@ export default {
   data: function() {
     return {
       nombre: '',
-      categoria_juguete: '',
+      tipo_juguete: '',
       categoria_lugar:'',
       checkedColores: [],
-      checkedMateriales: [],
+      radioMateriales: [],
       mensaje: ''
     }
   }
@@ -69,18 +141,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>
