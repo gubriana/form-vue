@@ -17,15 +17,29 @@
         <option value="playa">Playa</option>
       </select>  
     </p>
-    <p>Materialidades favoritas:<br>
-      <input type="checkbox" id="madera" value="madera" v-model="checkedNames">
-      <label for="madera">Madera</label><br>
-      <input type="checkbox" id="plastico" value="plastico" v-model="checkedNames">
-      <label for="plastico">Plastico</label><br>
-      <input type="checkbox" id="tela" value="tela" v-model="checkedNames">
-      <label for="tela">Tela</label><br>
+    <p>Colores preferidos:<br>
+      <input type="checkbox" value="azul" v-model="checkedColores">
+      <label for="azul">Azul</label><br>
+      <input type="checkbox" value="verde" v-model="checkedColores">
+      <label for="">Verde</label><br>
+      <input type="checkbox" value="amarillo" v-model="checkedColores">
+      <label for="amarillo">Amarillo</label><br>
+      <input type="checkbox" value="rojo" v-model="checkedColores">
+      <label for="rojo">Rojo</label><br>
       <br>
-      <span>Checked names: {{ checkedNames }}</span>
+       <!--<span>Colores elegidos: {{ checkedColores }}</span>-->
+    </p>
+    <p>Materialidades favoritas:<br>
+      <input type="radio" value="madera" v-model="checkedMateriales">
+      <label for="madera">Madera</label><br>
+      <input type="radio" value="plastico" v-model="checkedMateriales">
+      <label for="plastico">Plástico</label><br>
+      <input type="radio" value="tela" v-model="checkedMateriales">
+      <label for="tela">Tela</label><br>
+      <input type="radio" value="espuma" v-model="checkedMateriales">
+      <label for="tela">Espuma</label><br>
+      <br>
+      <!--<span>Material escogido: {{ checkedMateriales }}</span>-->
     </p>
   </form>
 </template>
@@ -38,7 +52,8 @@ export default {
       nombre: '',
       categoria_jueguete: '',
       categoria_lugar:'',
-      checkedNames: []
+      checkedColores: [],
+      checkedMateriales: []
     }
   }
 }
