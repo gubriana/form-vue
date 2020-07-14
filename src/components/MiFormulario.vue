@@ -26,9 +26,8 @@
       <label for="amarillo">Amarillo</label><br>
       <input type="checkbox" value="rojo" v-model="checkedColores">
       <label for="rojo">Rojo</label><br>
-      <br>
-       <!--<span>Colores elegidos: {{ checkedColores }}</span>-->
     </p>
+      <br>
     <p>Materialidades favoritas:<br>
       <input type="radio" value="madera" v-model="checkedMateriales">
       <label for="madera">Madera</label><br>
@@ -38,9 +37,17 @@
       <label for="tela">Tela</label><br>
       <input type="radio" value="espuma" v-model="checkedMateriales">
       <label for="tela">Espuma</label><br>
-      <br>
-      <!--<span>Material escogido: {{ checkedMateriales }}</span>-->
-    </p>
+    </p><br>
+    <p>
+      Mensaje: <textarea v-model="mensaje" placeholder="Agregar líneas"></textarea>
+    </p><br>
+    <button type="submit" id="enviar">Enviar</button>
+    <p>Nombre: {{Nombre}}</p>
+    <p>Juguete: {{categoria_juguete}}</p>
+    <p>Lugar: {{categoria_lugar}}</p>
+    <p>Color: {{checkedColores}}</p>
+    <p>Materialidad: {{checkedMateriales}}</p>
+    <p>Mensaje: {{mensaje}}</p>
   </form>
 </template>
 
@@ -50,10 +57,11 @@ export default {
   data: function() {
     return {
       nombre: '',
-      categoria_jueguete: '',
+      categoria_juguete: '',
       categoria_lugar:'',
       checkedColores: [],
-      checkedMateriales: []
+      checkedMateriales: [],
+      mensaje: ''
     }
   }
 }
