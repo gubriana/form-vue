@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import 'materialize-css'; // It installs the JS asset only
+import 'materialize-css/dist/css/materialize.min.css';
+
 Vue.config.productionTip = false
 
 new Vue({

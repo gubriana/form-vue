@@ -124,6 +124,7 @@
 </template>
 
 <script>
+import M from 'materialize-css'
 export default {
   name: 'MiFormulario',
   data: function() {
@@ -135,10 +136,15 @@ export default {
       radioMateriales: [],
       mensaje: ''
     }
+  },
+  mounted: function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {});
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>
