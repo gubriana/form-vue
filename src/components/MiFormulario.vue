@@ -113,8 +113,8 @@
             <p>Materialidad: {{radioMateriales}}</p>
             <p>Mensaje: {{mensaje}}</p>
           </form>
-          <div class="align-center">
-            <button class="btn waves-effect waves-light pulse" type="submit" name="action">Enviar</button>
+          <div class="">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
           </div>
       </div>
     </div>
@@ -139,7 +139,7 @@ export default {
   },
   mounted: function() {
     var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, {});
+    M.FormSelect.init(elems, {});
   }
 }
 </script>
