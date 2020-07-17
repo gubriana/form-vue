@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div id="app" class="container blue-grey lighten-5">
     <MiFormulario/>
   </div>
 </template>

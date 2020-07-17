@@ -104,17 +104,9 @@
             <h6>Si necesitas agregar algo más puedes dejarnos un mensaje</h6>
             <textarea id="mensaje" class="materialize-textarea" v-model="mensaje"></textarea>
             <label for="textarea1"></label>
-            <br>
-            
-            <p>Nombre: {{nombre}}</p>
-            <p>Juguete: {{tipo_juguete}}</p>
-            <p>Lugar: {{categoria_lugar}}</p>
-            <p>Color: {{checkedColores}}</p>
-            <p>Materialidad: {{radioMateriales}}</p>
-            <p>Mensaje: {{mensaje}}</p>
           </form>
-          <div class="">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
+          <div>
+            <button class="btn waves-effect waves-light" type="submit" name="action" @click="submit">Enviar</button>
           </div>
       </div>
     </div>
@@ -140,6 +132,12 @@ export default {
   mounted: function() {
     var elems = document.querySelectorAll('select');
     M.FormSelect.init(elems, {});
+  },
+  methods: {
+    submit: function(ev){
+      ev.preventDefault();
+      alert( 'TUS PREFENRENCIAS SON: ' + ' NOMBRE: ' + this.nombre + ' TIPO DE JUGUETE: ' + this.tipo_juguete + ' LUGAR: ' + this.categoria_lugar + ' COLORES: ' + this.checkedColores + ' MATERIALES: ' + this.radioMateriales + ' MENSAJE: ' + this.mensaje)
+    }
   }
 }
 </script>
